@@ -31,13 +31,24 @@ public class CarRentalService {
     }
 
     @GetMapping("/cars/{plateNumber}")
-    public Car getCar(@PathVariable(value = "plateNumber") String plateNumber){
+    public Car getCar(@PathVariable(value = "plateNumber") String plateNumber,
+                      @RequestParam(value = "rent") boolean rent){
+
         for(Car car: cars){
             if(car.getPlateNumber().equals(plateNumber)){
+                System.out.println(rent);
                 return car;
             }
         }
         return null;
+    }
+
+
+    @PutMapping("/testcars")
+    public void rent(@RequestBody Dates dates){
+        System.out.println(dates);
+
+        cars.get(0).getDates().add(dates);
     }
 
 

@@ -1,10 +1,14 @@
 package com.example.demoWebService;
 
+import java.util.ArrayList;
+
 public class Car {
 
     private String plateNumber;
     private String brand;
     private int price;
+
+    private ArrayList<Dates> dates = new ArrayList<>();
 
     public Car() {
         super();
@@ -39,6 +43,14 @@ public class Car {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    public ArrayList<Dates> getDates() {
+        return dates;
+    }
+
+    public void setDates(ArrayList<Dates> dates) {
+        this.dates = dates;
     }
 
     @Override
