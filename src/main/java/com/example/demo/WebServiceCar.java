@@ -8,17 +8,11 @@ import java.util.List;
 
 @RestController
 public class WebServiceCar {
-
     CarRepository carRepository;
-
     @Autowired
     public WebServiceCar(CarRepository carRepository){
+        System.out.println(carRepository);
         this.carRepository = carRepository;
-        Car car = new Car();
-        car.setPrice(1000);
-        car.setPlateNumber("AA1188");
-        carRepository.save(car);
-
     }
 
     @GetMapping("/cars")
