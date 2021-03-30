@@ -3,12 +3,12 @@ package com.example.demo;
 import javax.persistence.Entity;
 
 @Entity
-public class Car extends Vehicule
-{
+public class Van extends Vehicule {
+
     private String brand;
     private String plateNumber;
     private int price;
-    private int numberOfSeats;
+    private int maxWeight;
 
     @Override
     public String getPlateNumber()
@@ -46,15 +46,14 @@ public class Car extends Vehicule
         this.price = price;
     }
 
-    public int getNumberOfSeats()
+    public int getMaxWeight()
     {
-        return numberOfSeats;
+        return maxWeight;
 
     }
 
-    public void setNumberOfSeats(int numberOfSeats)
+    public void setMaxWeight(int maxWeight)
     {
-        this.numberOfSeats = numberOfSeats;
+        this.maxWeight = maxWeight;
     }
-
 }
